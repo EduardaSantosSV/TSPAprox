@@ -7,6 +7,7 @@ import java.util.Scanner;
 public class FileParser {
     private File file;
     private int[][] adjMatrix;
+    private int optimalSolution;
 
     public void generateAdjMatrix(){
         String[] linhaArray;
@@ -40,18 +41,23 @@ public class FileParser {
         switch(exemplo){
             case 1:
                 this.file = new File("src/examples/tsp1_253.txt");
+                this.optimalSolution = 253;
                 break;
             case 2:
                 this.file = new File("src/examples/tsp2_1248.txt");
+                this.optimalSolution = 1248;
                 break;
             case 3:
                 this.file = new File("src/examples/tsp3_1194.txt");
+                this.optimalSolution = 1194;
                 break;
             case 4:
                 this.file = new File("src/examples/tsp4_7013.txt");
+                this.optimalSolution = 7013;
                 break;
             case 5:
                 this.file = new File("src/examples/tsp5_27603.txt");
+                this.optimalSolution = 27603;
                 break;
             default:
                 System.out.println("Escolha um arquivo válido.");
@@ -61,5 +67,9 @@ public class FileParser {
 
     public int[][] getAdjMatrix(){
         return this.adjMatrix;
+    }
+
+    public int getOptimalSolution(){
+        return this.optimalSolution;
     }
 }
